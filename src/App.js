@@ -1,5 +1,6 @@
 import './styles.css';
 import SongPlayer from './SongPlayer';
+import SongList from './SongList';
 
 function App() {
 	const songs = [
@@ -28,6 +29,7 @@ function App() {
 	return (
 		<div className="App">
 			<SongPlayer song={currentSong} />
+			<SongList songs={songs} />
 		</div>
 	);
 }
