@@ -29,7 +29,7 @@ function App() {
 	return (
 		<div className="App">
 			<SongPlayer song={currentSong} />
-			<SongList songs={songs} />
+			<SongList songs={songs} currentSong={currentSong} />
 		</div>
 	);
 }

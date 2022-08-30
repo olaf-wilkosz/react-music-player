@@ -1,6 +1,6 @@
 function SongListItem(props) {
 	return (
-		<li>
+		<li style={{ backgroundColor: props.isCurrent ? 'orangered' : 'none' }} key={props.isCurrent}>
 			{props.song.title} by {props.song.artist}
 		</li>
 	);

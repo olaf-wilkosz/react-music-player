@@ -6,7 +6,11 @@ function SongList(props) {
 			<h2>Songs</h2>
 			<ul>
 				{props.songs.map((song) => (
-					<SongListItem song={song} key={song.audioUrl} />
+					<SongListItem
+						song={song}
+						key={song.audioUrl}
+						isCurrent={song.audioUrl === props.currentSong.audioUrl}
+					/>
 				))}
 			</ul>
 		</section>
