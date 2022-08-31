@@ -1,6 +1,7 @@
-import './styles.css';
+import { useState } from 'react';
 import SongPlayer from './SongPlayer';
 import SongList from './SongList';
+import './styles.css';
 
 function App() {
 	const songs = [
@@ -24,12 +25,14 @@ function App() {
 		},
 	];
 
-	const currentSong = songs[2];
+	const [currentSongIndex, setCurrentSongIndex] = useState(0);
+
+	const currentSong = songs[currentSongIndex];
 
 	return (
 		<div className="App">
 			<SongPlayer song={currentSong} />
-			<SongList songs={songs} currentSong={currentSong} />
+			<SongList songs={songs} currentSong={currentSong} setCurrentSongIndex={setCurrentSongIndex} />
 		</div>
 	);
 }
