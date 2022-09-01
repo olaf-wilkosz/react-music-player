@@ -2,7 +2,8 @@
 
 body {
 	box-sizing: border-box;
-	margin: 5%;
+	margin: 0;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -130,4 +131,11 @@ h2 {
 
 .SongListItem:hover {
 	background-color: #003020;
+}
+
+@media (max-height: 800px) {
+	body {
+		margin: 10%;
+		height: unset;
+	}
 }
