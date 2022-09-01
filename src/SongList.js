@@ -9,7 +9,7 @@ function SongList(props) {
 	}
 
 	return (
-		<section>
+		<section className="SongList">
 			<h2>Songs</h2>
 			<ul>
 				{props.songs.map((song) => (

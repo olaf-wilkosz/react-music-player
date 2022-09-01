@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 body {
-	margin: 0;
-	height: 100vh;
+	box-sizing: border-box;
+	margin: 5%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -16,6 +16,10 @@ h1 {
 	margin: 10px;
 }
 
+h2 {
+	margin: 10px 10px 0;
+}
+
 .App {
 	display: flex;
 	flex-direction: column;
@@ -23,4 +27,107 @@ h1 {
 	align-items: center;
 	text-align: center;
 	font-family: 'Lato', sans-serif;
+	filter: drop-shadow(10px 10px 10px #111);
+}
+
+.SongPlayerWrapper {
+	position: relative;
+	border: 2px solid #111;
+	border-radius: 10px 10px 0 0;
+}
+
+.SongPlayerBackground {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	border-radius: 10px 10px 0 0;
+	filter: blur(2px) brightness(0.3);
+	z-index: -1;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.SongPlayer {
+	min-width: 320px;
+	min-height: 320px;
+	margin: 0 auto;
+	padding: 10px 10px 20px;
+	border-radius: 10px;
+}
+
+.SongPlayer img {
+	width: 250px;
+	height: 250px;
+	margin: 10px auto 20px;
+	border-radius: 10px;
+	transition: transform 0.3s ease-in-out;
+}
+
+.SongPlayer img:hover {
+	transform: scale(1.05);
+}
+
+.SongPlayer button {
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	padding: 5px;
+	margin: 0 10px;
+	border-radius: 50%;
+	background-color: #111;
+	color: #fafafa;
+	border-color: #fafafa;
+	font-size: 16px;
+	line-height: 0;
+	filter: drop-shadow(5px 5px 5px #111);
+	transition: transform 0.3s ease-in-out;
+}
+
+.SongPlayer button:not(#playBtn, #pauseBtn) {
+	cursor: unset;
+	background-color: #777;
+}
+
+.SongPlayer button:is(#playBtn, #pauseBtn):hover {
+	background-color: #fafafa;
+	color: #111;
+	border-color: #111;
+	transform: scale(1.05);
+}
+
+.SongList {
+	width: 100%;
+	background-color: #111;
+	border-radius: 0 0 10px 10px;
+}
+
+.SongList ul {
+	margin: 0;
+	padding: 10px;
+	list-style-type: none;
+	text-align: left;
+}
+
+.SongListItem {
+	cursor: pointer;
+	margin: 10px 0;
+	padding: 10px;
+	border-radius: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.SongListItem.selected {
+	background-color: #003020;
+	color: #fafafa;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.SongListItem:hover {
+	background-color: #003020;
 }
