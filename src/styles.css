@@ -119,18 +119,18 @@ h2 {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	transition: background-color 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
 }
 
 .SongListItem.selected {
-	background-color: #003020;
+	background: linear-gradient(to right, #003020, #111);
 	color: #fafafa;
 	font-weight: bold;
-	cursor: pointer;
 }
 
 .SongListItem:hover {
-	background-color: #003020;
+	background: linear-gradient(to right, #777, #111);
+	color: #fff;
 }
 
 @media (max-height: 800px) {
