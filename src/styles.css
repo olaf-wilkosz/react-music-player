@@ -72,21 +72,22 @@ h2 {
 
 .SongPlayer button {
 	cursor: pointer;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
 	width: 40px;
 	height: 40px;
-	padding: 5px;
 	margin: 0 10px;
 	border-radius: 50%;
 	background-color: #111;
 	color: #fafafa;
 	border-color: #fafafa;
 	font-size: 16px;
-	line-height: 0;
 	filter: drop-shadow(5px 5px 5px #111);
 	transition: all 0.3s ease-in-out;
 }
 
-.SongPlayer button:not(#playBtn, #pauseBtn) {
+.SongPlayer button:disabled {
 	cursor: unset;
 	background-color: #777;
 }
