@@ -140,3 +140,21 @@ h2 {
 		height: unset;
 	}
 }
+
+@media (min-width: 800px) {
+	.App {
+		flex-direction: row;
+		display: inline-flex;
+		align-items: stretch;
+	}
+
+	.SongPlayerWrapper,
+	.SongPlayerBackground {
+		border-radius: 10px 0 0 10px;
+	}
+
+	.SongList {
+		padding: 10px;
+		border-radius: 0 10px 10px 0;
+	}
+}
