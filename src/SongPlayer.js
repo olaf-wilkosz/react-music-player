@@ -1,4 +1,6 @@
 import { useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBackward, faPlay, faPause, faStop, faForward } from '@fortawesome/free-solid-svg-icons'
 
 function SongPlayer(props) {
 	const audioRef = useRef();
@@ -13,11 +15,11 @@ function SongPlayer(props) {
 				<h1>React Music Player</h1>
 				<img src={props.song.coverUrl} alt="Song cover" />
 				<div>
-					<button id='prevBtn' disabled>⏮︎</button>
-					<button onClick={() => {audioRef.current.play()}} id='playBtn'>⏵︎</button>
-					<button onClick={() => {audioRef.current.pause()}} id='pauseBtn'>⏸︎</button>
-					<button id='stopBtn' disabled>⏹︎</button>
-					<button id='nextBtn' disabled>⏭︎</button>
+					<button id='prevBtn' disabled><FontAwesomeIcon icon={faBackward} /></button>
+					<button onClick={() => {audioRef.current.play()}} id='playBtn'><FontAwesomeIcon icon={faPlay} /></button>
+					<button onClick={() => {audioRef.current.pause()}} id='pauseBtn'><FontAwesomeIcon icon={faPause} /></button>
+					<button id='stopBtn' disabled><FontAwesomeIcon icon={faStop} /></button>
+					<button id='nextBtn' disabled><FontAwesomeIcon icon={faForward} /></button>
 				</div>
 				<audio ref={audioRef} key={props.song.audioUrl}>
 					<source src={props.song.audioUrl} />
