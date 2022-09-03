@@ -10,9 +10,28 @@ function SongPlayer(props) {
 		this.currentTime = 0;
 	};
 
-	const playSong = () => audioRef.current.play();
-	const pauseSong = () => audioRef.current.pause();
-	const stopSong = () => audioRef.current.stop();
+	const updateActiveControl = (e) => {
+		const controls = document.querySelectorAll('.controls button');
+		controls.forEach((control) => {
+			control.classList.remove('active');
+			if (e.target === control || control.contains(e.target)) {
+				e.target.classList.add('active');
+			}
+		});
+	};
+
+	const playSong = (e) => {
+		audioRef.current.play();
+		updateActiveControl(e);
+	};
+	const pauseSong = (e) => {
+		audioRef.current.pause();
+		updateActiveControl(e);
+	};
+	const stopSong = (e) => {
+		audioRef.current.stop();
+		updateActiveControl(e);
+	};
 
 	return (
 		<section className="SongPlayerWrapper">
@@ -23,17 +42,17 @@ function SongPlayer(props) {
 			<section className="SongPlayer">
 				<h1>React Music Player</h1>
 				<img src={props.song.coverUrl} alt="Song cover" />
-				<div>
+				<div className="controls">
 					<button id="prevBtn" disabled>
 						<FontAwesomeIcon icon={faBackward} />
 					</button>
-					<button onClick={() => playSong()} id="playBtn">
+					<button onClick={(e) => playSong(e)} id="playBtn">
 						<FontAwesomeIcon icon={faPlay} />
 					</button>
-					<button onClick={() => pauseSong()} id="pauseBtn">
+					<button onClick={(e) => pauseSong(e)} id="pauseBtn">
 						<FontAwesomeIcon icon={faPause} />
 					</button>
-					<button onClick={() => stopSong()} id="stopBtn">
+					<button onClick={(e) => stopSong(e)} id="stopBtn">
 						<FontAwesomeIcon icon={faStop} />
 					</button>
 					<button id="nextBtn" disabled>

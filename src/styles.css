@@ -99,6 +99,27 @@ h2 {
 	transform: scale(1.05);
 }
 
+.SongPlayer button.active {
+	background-color: #fafafa;
+	color: #003020;
+	border-color: #003020;
+	animation: 2s infinite buttonPulse;
+}
+
+@keyframes buttonPulse {
+	from {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.1);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}
+
 .SongList {
 	width: 100%;
 	background-color: #111;
