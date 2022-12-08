@@ -12,6 +12,7 @@ function App() {
 			if (response.ok) {
 				response.json().then(setSongs);
 			}
+			return true;
 		});
 	}, []);
 
