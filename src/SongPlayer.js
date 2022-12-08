@@ -15,7 +15,7 @@ function SongPlayer(props) {
 		controls.forEach((control) => {
 			control.classList.remove('active');
 			if (e.target === control || control.contains(e.target)) {
-				e.target.classList.add('active');
+				control.classList.add('active');
 			}
 		});
 	};
@@ -24,10 +24,12 @@ function SongPlayer(props) {
 		audioRef.current.play();
 		updateActiveControl(e);
 	};
+
 	const pauseSong = (e) => {
 		audioRef.current.pause();
 		updateActiveControl(e);
 	};
+
 	const stopSong = (e) => {
 		audioRef.current.stop();
 		updateActiveControl(e);
