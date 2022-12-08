@@ -23,7 +23,7 @@ function App() {
 		<div className="App">
 			{songs.length > 0 ? (
 				<>
-					<SongPlayer song={currentSong} />
+					<SongPlayer song={currentSong} currentSongIndex={currentSongIndex} songListLength={songs.length} />
 					<SongList songs={songs} currentSong={currentSong} setCurrentSongIndex={setCurrentSongIndex} />
 				</>
 			) : (

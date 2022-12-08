@@ -43,7 +43,7 @@ function SongPlayer(props) {
 				<h1>React Music Player</h1>
 				<img src={props.song.coverUrl} alt="Song cover" />
 				<div className="controls">
-					<button id="prevBtn" disabled>
+					<button id="prevBtn" disabled={props.currentSongIndex === 0}>
 						<FontAwesomeIcon icon={faBackward} />
 					</button>
 					<button onClick={(e) => playSong(e)} id="playBtn">
@@ -55,7 +55,7 @@ function SongPlayer(props) {
 					<button onClick={(e) => stopSong(e)} id="stopBtn">
 						<FontAwesomeIcon icon={faStop} />
 					</button>
-					<button id="nextBtn" disabled>
+					<button id="nextBtn" disabled={props.currentSongIndex === props.songListLength - 1}>
 						<FontAwesomeIcon icon={faForward} />
 					</button>
 				</div>
